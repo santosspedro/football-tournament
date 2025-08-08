@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Torneios FIFA/EAFC</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>⚽ Gerador de Torneios FIFA/EAFC</h1>
+        
+        <section class="players-section">
+            <h2>👥 Jogadores</h2>
+            <div class="input-group">
+                <input type="text" id="player-name" placeholder="Digite o nome do jogador">
+                <button id="add-player">Adicionar</button>
+            </div>
+            <ul id="player-list"></ul>
+            <div class="player-count">
+                <small>Total de jogadores: <span id="player-count">0</span></small>
+            </div>
+        </section>
+
+        <section class="teams-section">
+            <h2>🏆 Times</h2>
+            <div class="input-group">
+                <input type="text" id="team-name" placeholder="Digite o nome do time">
+                <button id="add-team">Adicionar</button>
+            </div>
+            <ul id="team-list"></ul>
+            <div class="team-count">
+                <small>Total de times: <span id="team-count">0</span></small>
+            </div>
+        </section>
+
+        <section class="tournament-settings">
+            <h2>⚙️ Configurações do Torneio</h2>
+            
+            <label for="tournament-type">Tipo de Torneio:</label>
+            <select id="tournament-type">
+                <option value="round-robin">Pontos Corridos (Todos contra todos)</option>
+                <option value="knockout">Mata-mata (Eliminação direta)</option>
+                <option value="groups">Fase de Grupos + Mata-mata</option>
+            </select>
+
+            <label for="match-duration">Duração das Partidas:</label>
+            <select id="match-duration">
+                <option value="3">3 minutos</option>
+                <option value="4">4 minutos</option>
+                <option value="5" selected>5 minutos</option>
+                <option value="6">6 minutos</option>
+                <option value="custom">Personalizado</option>
+            </select>
+
+            <label for="rules">Regras Especiais:</label>
+            <textarea id="rules" placeholder="Ex: Gol contra vale 2 pontos, sem prorrogação, pênaltis em caso de empate..."></textarea>
+
+            <button id="generate-teams">🎲 Sortear Equipes</button>
+        </section>
+
+        <section class="results-section">
+            <h2>📋 Resultados do Sorteio</h2>
+            <div id="sorted-teams">
+                <p style="text-align: center; color: #718096; font-style: italic;">
+                    Adicione jogadores e times, depois clique em "Sortear Equipes" para ver os resultados!
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
